@@ -29,7 +29,12 @@ class App extends Component {
             <h6>{game.fields.Type}</h6>
             <h6>Max Players:</h6><span><p>{game.fields.MaxPlayers}</p></span>
             <h6>Roster size: </h6><span><p>{game.fields.Roster}</p></span>
-            <h7>Platforms: {game.fields.Platforms}</h7>
+            <h6>Platforms:</h6>
+            <p>
+            {game.fields.Platforms.map((element) => (
+              <span>{element} </span>
+            ))}
+            </p>
           </div>
         </div>
           ))}
