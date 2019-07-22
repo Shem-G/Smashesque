@@ -49,7 +49,7 @@ class App extends Component {
                 </p>
               </div>
               <div className="col-1">
-                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="200px" className="vertical-align align-middle"></img>
+                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="250px" className="p-3"></img>
               </div>
             </div>
 
