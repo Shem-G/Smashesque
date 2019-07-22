@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.png';
+import search from './search.svg';
 import './App.css';
 
 class App extends Component {
@@ -22,6 +23,12 @@ class App extends Component {
       <div className="container">
         <div className="col-xs-12">
           <img src={logo} className="w-50 m-3" alt="Smashesque"></img>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search a Title, Platform or Tag" aria-label="Search a Title, Platform or Tag" aria-describedby="Search a Title, Platform or Tag"></input>
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button"><img src={search} alt="Search"></img></button>
+            </div>
+          </div>
         </div>
         {this.state.games.map((game) => (
           <div className="card mb-3">
