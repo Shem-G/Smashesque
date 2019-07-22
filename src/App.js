@@ -34,20 +34,20 @@ class App extends Component {
         {this.state.games.map((game) => (
           <div className="card border-0">
             <div className="row">
-              <div className="col-1">
-                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" className=""></img>
+              <div className="col-auto p-0" width="100px">
+                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" className="clearfix"></img>
               </div>
-              <div className="col">
+              <div className="col p-0">
                 <div className="card-body pt-0">
                   <h5 className="card-title">{game.fields.Name} <small className="text-muted">{game.fields.Type}</small></h5>
                   <p>{game.fields.Description}</p>
                   <div className="row">
                     <div className="col-auto"><strong>Max Players: </strong>
-                      <p><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
+                      <p className="m-0"><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
                     <div className="col-auto"><strong>Roster size: </strong>
-                      <p><button className="btn btn-outline-danger btn-sm m-1">{game.fields.Roster === 0 ? 'N/A' : game.fields.Roster}</button></p></div>
+                      <p className="m-0"><button className="btn btn-outline-danger btn-sm m-1">{game.fields.Roster === 0 ? 'N/A' : game.fields.Roster}</button></p></div>
                     <div className="col-auto"><strong>Platforms:</strong>
-                      <p>
+                      <p className="m-0">
                         {game.fields.Platforms.map((element) => (
                           <button className="btn btn-outline-info btn-sm m-1">{element} </button>
                         ))}
@@ -55,7 +55,7 @@ class App extends Component {
                     </div>
 
                     <div className="col-auto"><strong>Tags: </strong>
-                      <p>
+                      <p className="m-0">
                         {game.fields.Tags.map((element) => (
                           <button className="btn btn-outline-success btn-sm m-1">{element} </button>
                         ))}
@@ -63,10 +63,7 @@ class App extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col pt-3">
-                  </div>
-                </div>
+
               </div>
             </div>
           </div>
