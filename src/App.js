@@ -7,41 +7,53 @@ class App extends Component {
   state = {
     games: []
   }
-  componentDidMount(){
+  componentDidMount() {
     fetch('https://api.airtable.com/v0/appm7yNaBwxKoHFEr/Game%20List?api_key=keyxdvk2igijIb9Q0')
-    .then(res => res.json())
-    .then ((data) => {
-      this.setState({games: data.records})
-      console.log(this.state.games)
-    })
-    .catch(console.log)
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({ games: data.records })
+        console.log(this.state.games)
+      })
+      .catch(console.log)
   }
 
   render() {
     return (
-       <div className="container">
+      <div className="container">
         <div className="col-xs-12">
-        <img src={logo} className="w-50 m-3" alt="Smashesque"></img>
+          <img src={logo} className="w-50 m-3" alt="Smashesque"></img>
+        </div>
         {this.state.games.map((game) => (
-          <div className="card">
-          <div className="card-body">
-            <h5 className="card-title">{game.fields.Name}</h5>
-            <h6>{game.fields.Type}</h6>
-            <h6>Max Players:</h6><span><p>{game.fields.MaxPlayers}</p></span>
-            <h6>Roster size: </h6><span><p>{game.fields.Roster === 0 ? 'Other' : game.fields.Roster}</p></span>
-            <h6>Platforms:</h6>
-            <p>
-            {game.fields.Platforms.map((element) => (
-              <span>{element} </span>
-            ))}
-            </p>
+          <div className="card mb-3">
+            <div className="row">
+              <div className="col">
+                <div className="card-body">
+                  <h5 className="card-title">{game.fields.Name} <span className="text-muted">{game.fields.Type}</span></h5>
+                  <p>{game.fields.Description}</p>
+                </div>
+              </div>
+              <div className="col p-3">
+                
+                <p><strong>Max Players: </strong>{game.fields.MaxPlayers}</p>
+                <p><strong>Roster size: </strong>{game.fields.Roster === 0 ? 'Other' : game.fields.Roster}</p>
+                <h6>Platforms:</h6>
+                <p>
+                  {game.fields.Platforms.map((element) => (
+                    <button className="btn btn-outline-info btn-sm mr-1">{element} </button>
+                  ))}
+                </p>
+                <h6>Tags: </h6>
+                <p>
+                  {game.fields.Tags.map((element) => (
+                    <button className="btn btn-outline-success btn-sm mr-1">{element} </button>
+                  ))}
+                </p>
+              </div>
+            </div>
+
           </div>
-        </div>
-          ))}
-        
-          
-        </div>
-       </div>
+        ))}
+      </div>
     );
   }
 }
