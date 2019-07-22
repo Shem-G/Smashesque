@@ -28,7 +28,7 @@ class App extends Component {
             <h5 className="card-title">{game.fields.Name}</h5>
             <h6>{game.fields.Type}</h6>
             <h6>Max Players:</h6><span><p>{game.fields.MaxPlayers}</p></span>
-            <h6>Roster size: </h6><span><p>{game.fields.Roster}</p></span>
+            <h6>Roster size: </h6><span><p>{game.fields.Roster === 0 ? 'Other' : game.fields.Roster}</p></span>
             <h6>Platforms:</h6>
             <p>
             {game.fields.Platforms.map((element) => (
