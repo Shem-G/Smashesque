@@ -26,31 +26,30 @@ class App extends Component {
         {this.state.games.map((game) => (
           <div className="card mb-3">
             <div className="row">
-              <div className="col">
+              <div className="col-5">
                 <div className="card-body">
                   <h5 className="card-title">{game.fields.Name} <span className="text-muted">{game.fields.Type}</span></h5>
                   <p>{game.fields.Description}</p>
                 </div>
               </div>
-              <div className="col p-3">
-                
+              <div className="col-4 pt-3">
                 <p><strong>Max Players: </strong>{game.fields.MaxPlayers}</p>
                 <p><strong>Roster size: </strong>{game.fields.Roster === 0 ? 'Other' : game.fields.Roster}</p>
                 <h6>Platforms:</h6>
                 <p>
                   {game.fields.Platforms.map((element) => (
-                    <button className="btn btn-outline-info btn-sm mr-1">{element} </button>
+                    <button className="btn btn-outline-info btn-sm m-1">{element} </button>
                   ))}
                 </p>
                 <h6>Tags: </h6>
                 <p>
                   {game.fields.Tags.map((element) => (
-                    <button className="btn btn-outline-success btn-sm mr-1">{element} </button>
+                    <button className="btn btn-outline-success btn-sm m-1">{element} </button>
                   ))}
                 </p>
               </div>
-              <div className="col p-3">
-                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="300px"></img>
+              <div className="col-1">
+                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="200px" className="vertical-align align-middle"></img>
               </div>
             </div>
 
