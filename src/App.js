@@ -49,6 +49,9 @@ class App extends Component {
                   ))}
                 </p>
               </div>
+              <div className="col p-3">
+                <img src={game.fields.Image.url} alt={game.fields.Name}></img>
+              </div>
             </div>
 
           </div>
