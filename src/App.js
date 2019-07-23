@@ -34,7 +34,7 @@ class App extends Component {
           
           {this.state.games.map((game) => (
             <li className="my-2">
-            <div className="row">
+            <div className="row p-3">
               <div className="col-auto" width="100px">
                 <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" ></img>
               </div>
