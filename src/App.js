@@ -42,7 +42,7 @@ class App extends Component {
               <div className="col p-0">
                 <div className="card-body p-0 pl-3">
                   <h5 className="card-title">{game.fields.Name} <small className="text-muted">{game.fields.Type}</small></h5>
-                  <p className="m-1">{game.fields.Description}</p>
+                  <p className="">{game.fields.Description}</p>
                   <div className="row">
                     <div className="col-auto"><strong>Max Players: </strong>
                       <p className="m-0"><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
