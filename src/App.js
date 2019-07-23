@@ -30,17 +30,19 @@ class App extends Component {
             </div>
           </div>
         </div>
-
-        {this.state.games.map((game) => (
+        <ul className="p-0">
+          
+          {this.state.games.map((game) => (
+            <li className="my-2">
           <div className="card border-0">
-            <div className="row">
-              <div className="col-auto p-0" width="100px">
-                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" className="clearfix"></img>
+            <div className="row ">
+              <div className="col-auto pr-0" width="100px">
+                <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" ></img>
               </div>
               <div className="col p-0">
-                <div className="card-body pt-0">
+                <div className="card-body p-0 pl-3">
                   <h5 className="card-title">{game.fields.Name} <small className="text-muted">{game.fields.Type}</small></h5>
-                  <p>{game.fields.Description}</p>
+                  <p className="m-1">{game.fields.Description}</p>
                   <div className="row">
                     <div className="col-auto"><strong>Max Players: </strong>
                       <p className="m-0"><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
@@ -63,13 +65,14 @@ class App extends Component {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
-
+          </li>
         ))}
+          
+        </ul>
+        
       </div>
     );
   }
