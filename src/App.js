@@ -30,35 +30,35 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-        <div className="col w-75">
-        <ul className="p-0">
+        <div className="col w-5">
+        <ul className="">
             {
               this.state.games.map((game) => (
-            <li className="my-2">
-              <div className="row p-3">
+            <li className="mb-2 p-2">
+              <div className="row no-gutters">
                 <div className="col-auto" width="100px">
                   <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" ></img>
                 </div>
-                <div className="col p-0">
-                  <div className="p-0">
-                    <div className="row">
+                <div className="col">
+                  <div className="">
+                    <div className="row no-gutters">
                       <h5 className="pl-3">{game.fields.Name} <small className="text-muted">{game.fields.Type}</small></h5>
                     </div>
-                    <p className="pr-3">{game.fields.Description}</p>
-                    <div className="row">
+                    <p className="pl-3 pb-2 m-0">{game.fields.Description}</p>
+                    <div className="row pl-3 no-gutters">
                       <div className="col-auto"><strong>Max Players: </strong>
-                        <p className="m-0"><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
-                      <div className="col-auto"><strong>Roster size: </strong>
-                        <p className="m-0"><button className="btn btn-outline-danger btn-sm m-1">{game.fields.Roster === 0 ? 'N/A' : game.fields.Roster}</button></p></div>
-                      <div className="col-auto"><strong>Platforms:</strong>
-                        <p className="m-0">
+                        <p className=""><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
+                      <div className="col-auto pl-5"><strong>Roster size: </strong>
+                        <p className=""><button className="btn btn-outline-danger btn-sm m-1">{game.fields.Roster === 0 ? 'N/A' : game.fields.Roster}</button></p></div>
+                      <div className="col-auto pl-5"><strong>Platforms:</strong>
+                        <p className="">
                           {game.fields.Platforms.map((element) => (
                             <button className="btn btn-outline-info btn-sm m-1">{element} </button>
                           ))}
                         </p>
                       </div>
 
-                      <div className="col-auto"><strong>Tags: </strong>
+                      <div className="col-auto pl-5"><strong>Tags: </strong>
                         <p className="m-0">
                           {game.fields.Tags.map((element) => (
                             <button className="btn btn-outline-success btn-sm m-1">{element} </button>
@@ -75,8 +75,15 @@ class App extends Component {
 
         </ul>
         </div>
-        <div className="col-4">
-            Hello
+        <div className="col-3">
+            <div className="row no-gutters">
+              <div className="col bg-white">
+                <div className="bg-dark text-light">
+                Test div
+                </div>
+                <p>Hello, this is a test dive for sidebar content.</p>
+              </div>
+            </div>
         </div>
         </div>
       </div>
