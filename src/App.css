@@ -36,6 +36,10 @@ html {
   font-size: .8rem;
 }
 
+body {
+  background-color: #F5F5F5;
+}
+
 li { 
   list-style-type: none;
 }

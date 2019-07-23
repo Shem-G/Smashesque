@@ -34,14 +34,15 @@ class App extends Component {
           
           {this.state.games.map((game) => (
             <li className="my-2">
-          <div className="card border-0">
-            <div className="row ">
-              <div className="col-auto pr-0" width="100px">
+            <div className="row">
+              <div className="col-auto" width="100px">
                 <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" ></img>
               </div>
               <div className="col p-0">
-                <div className="card-body p-0 pl-3">
-                  <h5 className="card-title">{game.fields.Name} <small className="text-muted">{game.fields.Type}</small></h5>
+                <div className="p-0">
+                  <div className="row">
+                  <h5 className="pl-3">{game.fields.Name} <small className="text-muted">{game.fields.Type}</small></h5>
+                  </div>
                   <p className="">{game.fields.Description}</p>
                   <div className="row">
                     <div className="col-auto"><strong>Max Players: </strong>
@@ -63,11 +64,11 @@ class App extends Component {
                         ))}
                       </p>
                     </div>
+                    
                   </div>
                 </div>
               </div>
             </div>
-          </div>
           </li>
         ))}
           
