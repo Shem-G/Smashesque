@@ -31,7 +31,7 @@ class App extends Component {
         </div>
         <div className="row">
         <div className="col w-5">
-        <ul className="">
+        <ul className="p-0">
             {
               this.state.games.map((game) => (
             <li className="mb-2 p-2">
