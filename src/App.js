@@ -30,11 +30,12 @@ class App extends Component {
           </div>
         </div>
         <div className="row">
-        <div className="col w-5">
+        <div className="col w-5 pr-0 border-right">
+        <h3 className="bg-dark text-light text-center p-1 m-0">Game list</h3>
         <ul className="p-0">
             {
               this.state.games.map((game) => (
-            <li className="mb-2 p-2">
+            <li className="mb-0 pr-2 pl-0 border-bottom">
               <div className="row no-gutters">
                 <div className="col-auto" width="100px">
                   <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" ></img>
@@ -75,13 +76,16 @@ class App extends Component {
 
         </ul>
         </div>
-        <div className="col-3">
+        <div className="col-3 pl-0">
             <div className="row no-gutters">
               <div className="col bg-white">
-                <div className="bg-dark text-light">
-                Test div
+                <h3 className="bg-danger text-light text-center p-1">Featured Content</h3>
+                <div className="list-container p-3" id="featured">
+                  <ul className= "p-0">
+
+                  </ul>
+                  <h6>Smashesque tournament has begun!</h6>
                 </div>
-                <p>Hello, this is a test dive for sidebar content.</p>
               </div>
             </div>
         </div>
