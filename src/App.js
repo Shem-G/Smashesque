@@ -82,7 +82,9 @@ class App extends Component {
                 <h3 className="bg-danger text-light text-center p-1">Featured Content</h3>
                 <div className="list-container p-3" id="featured">
                   <ul className= "p-0">
-
+                    <li>
+                      
+                    </li>
                   </ul>
                   <h6>Smashesque tournament has begun!</h6>
                 </div>
