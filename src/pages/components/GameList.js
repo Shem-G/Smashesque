@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 const ListEntry = props => {
   const games = props.gameData.map((game) => {
-      return(
+    return(
         <div className="row no-gutters border-bottom">
           <div className="col-auto" width="100px">
             <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" ></img>
@@ -10,9 +11,10 @@ const ListEntry = props => {
           <div className="col">
             <div className="">
               <div className="row no-gutters">
-                <h5 className="pl-3">{game.fields.Name} <small className="text-muted">{game.fields.Type}</small></h5>
+                
+                <h5 className="pl-3 pt-1"><Link to={`/Games/${game.fields.Slug}`}>{game.fields.Name}</Link><small className="text-muted"> {game.fields.Type}</small></h5>
               </div>
-              <p className="pl-3 pb-2 m-0">{game.fields.Description}</p>
+              <p className="pl-3 pr-2 pb-2 m-0">{game.fields.Description}</p>
               <div className="row pl-3 no-gutters">
                 <div className="col-auto"><strong>Max Players: </strong>
                   <p className=""><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
