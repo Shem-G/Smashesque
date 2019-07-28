@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const ListEntry = props => {
   const games = props.gameData.map((game) => {
       return(
-        <div className="row no-gutters">
+        <div className="row no-gutters border-bottom">
           <div className="col-auto" width="100px">
             <img src={game.fields.Image[0].thumbnails.large.url} alt={game.fields.Name} width="100px" ></img>
           </div>
@@ -40,7 +40,7 @@ const ListEntry = props => {
         </div>
       );
   })
-  return <li className="mb-0 pr-2 pl-0 border-bottom">{games}</li>
+  return <li className="mb-0 pl-0">{games}</li>
 }
 
 class GameList extends Component {
