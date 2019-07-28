@@ -47,7 +47,7 @@ class GetData extends Component {
     }
 }
 
-export default function Games() {
+export default function AllGames() {
     return (
         <GetData />
     )
