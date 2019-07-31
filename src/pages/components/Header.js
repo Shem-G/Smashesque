@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom'
 
 const Heading = props => {
     return (
-            <div className="col-xs-12">
+            <div className="row no-gutters">
                 <Link to="/"><img src={logo} className="w-25 m-3" alt="Smashesque"></img></Link>
                 <div className="input-group mb-3">
-                    <input type="text" className="form-control" placeholder="Search a Title, Platform or Tag (THIS DOESN'T WORK YET)" aria-label="Search a Title, Platform or Tag" aria-describedby="Search a Title, Platform or Tag"></input>
+                    <input type="text" className="form-control rounded-0" placeholder="Search a Title, Platform or Tag (THIS DOESN'T WORK YET)" aria-label="Search a Title, Platform or Tag" aria-describedby="Search a Title, Platform or Tag"></input>
                     <div className="input-group-append">
-                        <button className="btn btn-outline-secondary" type="button"><img src={search} alt="Search" height="15px"></img></button>
+                        <button className="btn btn-outline-secondary rounded-0" type="button"><img src={search} alt="Search" height="15px"></img></button>
                     </div>
                 </div>
             </div>

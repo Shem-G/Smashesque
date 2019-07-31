@@ -1,10 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import GetData from './Games'
 import Header from './components/Header'
-import Games from './Games'
 
 export default function HomePage() {
     return (
-            <Games />
+        <div className="container">
+        <div className="row no-gutters">
+            <Header />
+            </div>
+        <div className="row no-gutters">    
+            <GetData />
+        </div>
+        </div>
         )
 }

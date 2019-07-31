@@ -1,7 +1,8 @@
 import Header from './components/Header'
 import React, { Component } from 'react'
 import FeaturedContent from './components/FeaturedContent'
-import GameList from './components/GameList'
+import ListEntry from './components/GameList'
+import App from '../App'
 import axios from 'axios'
 
 class GetData extends Component {
@@ -24,25 +25,22 @@ class GetData extends Component {
         this.update = setInterval(fetchData, 4000);
     }
 
+    
+
     render() {
         const { games } = this.state
+        let filteredList = this.state.games.filter(
+            
+        )
         return (
-            <div className="container">
-                <Header />
-                <div className="row">
-                    <div className="col w-5 pr-0 border-right">
+                <div className="row no-gutters">
+                    <div className="col w-5 pr-0">
                         <h3 className="bg-dark text-light text-center p-1 m-0">Game list</h3>
                         <ul className="p-0">
-                            <GameList gameData={games} />
+                            <ListEntry gameData={this.state.games} />
                         </ul>
                     </div>
-                    <div className="col-3 pl-0">
-                        <div className="row no-gutters">
-                            <FeaturedContent />
-                        </div>
-                    </div>
                 </div>
-            </div>
         )
     }
 }

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom'
+import axios from 'axios'
 import HomePage from './pages/HomePage'
 import Games from './pages/Games'
 import GamePage from './pages/GamePage'
-
 
 export default function App() {
   return (
