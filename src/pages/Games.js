@@ -29,9 +29,7 @@ class GetData extends Component {
 
     render() {
         const { games } = this.state
-        let filteredList = this.state.games.filter(
-            
-        )
+       
         return (
                 <div className="row no-gutters">
                     <div className="col w-5 pr-0">

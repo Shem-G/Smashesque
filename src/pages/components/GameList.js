@@ -39,6 +39,6 @@ const ListEntry = props =>  {
         </div>
   )})
   return <li className="mb-0 pl-0">{games}</li>
-}
+  }
 
 export default ListEntry
