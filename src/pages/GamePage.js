@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from '../components/Header'
 import axios from 'axios'
 
+
 class Page extends Component {
     state = {
         games: []
