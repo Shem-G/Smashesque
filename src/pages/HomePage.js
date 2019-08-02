@@ -1,16 +1,14 @@
 import React from 'react'
-import GetData from './Games'
-import Header from './components/Header'
+import ContentList from '../components/ContentList';
 
 export default function HomePage() {
     return (
-        <div className="container">
         <div className="row no-gutters">
-            <Header />
+            <div className="col w-5 pr-0">
+                <h3 className="bg-dark text-light text-center p-1 m-0">Game list</h3>
+                <ul className="p-0">
+                </ul>
             </div>
-        <div className="row no-gutters">    
-            <GetData />
         </div>
-        </div>
-        )
+    )
 }

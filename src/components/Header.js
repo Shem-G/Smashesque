@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import logo from '../img/logo.png';
-import search from '../img/search.svg';
+import logo from './img/logo.png'
+import search from './img/search.svg'
 import { Link } from 'react-router-dom'
 
 const Heading = props => {

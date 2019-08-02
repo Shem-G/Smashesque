@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Header from '../components/Header'
 import axios from 'axios'
+export const GameContext = React.createContext()
 
-class Page extends Component {
+class GameContextProvider extends Component {
     state = {
         games: []
     }
@@ -22,25 +22,14 @@ class Page extends Component {
         this.update = setInterval(fetchData, 4000);
     }
 
-    render() {
-        const { game } = this.state
+    render(){
         return (
-            <div className="container">
-                <Header />
-                <div className="row">
-                    <div className="col w-5 pr-0 border-right">
-                        <h3 className="bg-dark text-light text-center p-1 m-0">{game.fields.Name}</h3>
-                    </div>
-                </div>
-            </div>
+            <GameContext.Provider value={{...this.state}}>
+                {this.props.children}
+            </GameContext.Provider>
         )
     }
 }
-                
-            
-            
-export default function GamePage() {
-    return (
-        <Page />
-    )
-}
+
+export default GameContextProvider
+

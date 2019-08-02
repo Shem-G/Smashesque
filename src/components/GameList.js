@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ListEntry = props =>  {
-  const games = props.gameData.map((game) => {
+  const GameEntry = props.gameData.map((game) => {
   return (
         <div className="row no-gutters border-bottom">
           <div className="col-auto" width="100px">
@@ -38,7 +38,7 @@ const ListEntry = props =>  {
           </div>
         </div>
   )})
-  return <li className="mb-0 pl-0">{games}</li>
+  return <li className="mb-0 pl-0">{GameEntry}</li>
   }
 
 export default ListEntry
