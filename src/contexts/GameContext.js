@@ -13,16 +13,16 @@ class GameContextProvider extends Component {
             axios
                 .get('https://api.airtable.com/v0/appm7yNaBwxKoHFEr/Game%20List?view=Sorted%20view&api_key=keyxdvk2igijIb9Q0')
                 .then(({ data }) => {
-                    this.setState({
-                        games: data.records
+                        this.setState({
+                            games: data.records
+                        })
                     })
-                })
                 .catch(console.log)
         }
         fetchData();
-        this.update = setInterval(fetchData, 4000);
     }
-
+    
+    
     render(){
         return (
             <GameContext.Provider value={{...this.state}}>

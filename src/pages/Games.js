@@ -1,38 +1,50 @@
 import React, { Component } from 'react'
 import { GameContext } from '../contexts/GameContext'
-import ContentList from '../components/ContentList'
+import ListEntry from '../components/GameList';
+import { throwStatement } from '@babel/types';
 
 class Games extends Component {
-    static contextType = GameContext
-
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
-            gameFilter: ""
+            search: ""
         }
     }
 
-    handleChange = (e) => {
-        this.setState({
-            gameFilter: e.target.value
-        })
-        this.props.onChange(e.target.value)
-        console.log(this.state.gameFilter)
+    updateSearch(event) {
+        this.setState({ search: event.target.value })
     }
+
 
     render() {
         return (
-            <div className="row no-gutters">
-                <div className="col w-5 pr-0">
-                    <h3 className="bg-dark text-light text-center p-1 m-0">Game list</h3>
-                    <input type="text" id="filter"
-                        value={this.state.gameFilter}
-                        onChange={this.handleChange} />
-                    <ul className='p-0'>
-                        
-                    </ul>
-                </div>
-            </div>
+            <GameContext.Consumer>{(context) => {
+                const { games } = context
+                let filteredGames = games.filter(
+                    (game) => {
+                        return game.fields.Name.toLowerCase().indexOf(
+                            this.state.search.toLowerCase()) !== -1
+
+                    }
+
+                )
+                console.log(filteredGames)
+                return (
+                    <div className="row no-gutters">
+                        <div className="col w-5 pr-0">
+                            <div class="input-group-append mb-3">
+                                <input type="text" class="rounded-0 form-control" placeholder="Search games" aria-label="Search games"
+                                    value={this.state.search}
+                                    onChange={this.updateSearch.bind(this)}
+                                />
+                            </div>
+                            <ul className='p-0'>
+                                <ListEntry gameData={filteredGames} />
+                            </ul>
+                        </div>
+                    </div>
+                )
+            }}</GameContext.Consumer>
         )
     }
 }
