@@ -18,7 +18,7 @@ const ListEntry = props => {
               state: { game: "blouty"}
               }}>{game.fields.Name}</Link><small className="text-muted"> {game.fields.Type}</small></h5>
         </div>
-        <p className="pl-3 pr-2 pb-2 m-0">{game.fields.Description}</p>
+        <p className="pl-3 pr-3 pb-2 m-0">{game.fields.Description}</p>
         <div className="row pl-3 no-gutters">
           <div className="col-auto"><strong>Max Players: </strong>
             <p className=""><button className="btn btn-outline-danger btn-sm m-1">{game.fields.MaxPlayers} </button></p></div>
