@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { GameContext } from '../contexts/GameContext'
-import ListEntry from '../components/GameList';
-import { throwStatement } from '@babel/types';
+import ListEntry from '../components/GameList'
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import PerfectScrollbar from 'react-perfect-scrollbar'
 
 class Games extends Component {
     constructor() {
@@ -18,6 +19,7 @@ class Games extends Component {
 
     render() {
         return (
+
             <GameContext.Consumer>{(context) => {
                 const { games } = context
                 let filteredGames = games.filter(
@@ -31,20 +33,25 @@ class Games extends Component {
                 console.log(filteredGames)
                 return (
                     <div className="row no-gutters">
-                        <div className="col w-5 pr-0">
-                            <div class="input-group-append mb-3">
-                                <input type="text" class="rounded-0 form-control" placeholder="Search games" aria-label="Search games"
-                                    value={this.state.search}
-                                    onChange={this.updateSearch.bind(this)}
-                                />
-                            </div>
-                            <ul className='p-0'>
-                                <ListEntry gameData={filteredGames} />
-                            </ul>
+                        <div className="input-group mb-3">
+                            <input type="text" className="rounded-0 form-control" placeholder="Search games" aria-label="Search games"
+                                value={this.state.search}
+                                onChange={this.updateSearch.bind(this)}
+                            />
+                        </div>
+                        <div className="row no-gutters">
+                                <div className="col w-5 pr-0 scrollable">
+                                <PerfectScrollbar>
+                                    <ul className='p-0'>
+                                        <ListEntry gameData={filteredGames} />
+                                    </ul>
+                                </PerfectScrollbar>
+                                </div>
                         </div>
                     </div>
                 )
             }}</GameContext.Consumer>
+
         )
     }
 }

@@ -4,20 +4,18 @@ import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Games from './pages/Games'
 import GamePage from './pages/GamePage'
-import HomePage from './pages/HomePage'
-
 import GameContextProvider from './contexts/GameContext'
 
 export default function App() {
   return (
     <div className="container">
     <GameContextProvider>
-      <Header />
-      <Switch>
+    <Header />
+    <Switch>
         <Route exact path="/" component={Games} />
         <Route path="/Games" component={Games} />
-        <Route path="/Games/GamePage" component={GamePage} />
-      </Switch>
+        <Route path="/GameName" component={GamePage} />
+    </Switch>
     </GameContextProvider>
     </div>
   )

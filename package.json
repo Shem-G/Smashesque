@@ -10,8 +10,12 @@
     "react-bootstrap": "^1.0.0-beta.9",
     "react-dom": "^16.8.6",
     "react-filter-search": "^1.0.8",
+    "react-perfect-scrollbar": "^1.5.3",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-sidebar": "^3.0.2",
+    "simplebar": "^4.1.0",
+    "simplebar-react": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
