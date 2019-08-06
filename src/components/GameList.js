@@ -13,10 +13,7 @@ const ListEntry = props => {
         <div className="col">
           <div className="row no-gutters">
             <h5 className="pl-3 pt-1">
-              <Link to={{
-                pathname: `/Games/${game.fields.Slug}`,
-              state: { game: "blouty"}
-              }}>{game.fields.Name}</Link><small className="text-muted"> {game.fields.Type}</small></h5>
+              {game.fields.Name}<small className="text-muted"> {game.fields.Type}</small></h5>
         </div>
         <p className="pl-3 pr-3 pb-2 m-0">{game.fields.Description}</p>
         <div className="row pl-3 no-gutters">

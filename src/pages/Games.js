@@ -43,7 +43,7 @@ class Games extends Component {
                                 <div className="col w-5 pr-0 scrollable">
                                 <PerfectScrollbar>
                                     <ul className='p-0'>
-                                        <ListEntry gameData={filteredGames} />
+                                        <ListEntry gameData={filteredGames}/>
                                     </ul>
                                 </PerfectScrollbar>
                                 </div>
